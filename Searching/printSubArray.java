@@ -9,7 +9,7 @@ public class printSubArray {
                 for (int k = i; k <= j; k++) {
                     System.out.print(" " + nums[k] + " ");
                 }
-                System.out.print("| ");
+                System.out.println("|");
             }
             System.out.println();
         }
