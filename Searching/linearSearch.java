@@ -12,8 +12,14 @@ public class linearSearch {
 
     public static void main(String[] args) {
         int[] numbers = { 23, 34, 10, 53, 8, 57, 7, 10 };
-        int key = 5;
+        int key = 57;
         int index = LinearSearch(key, numbers);
-        System.out.println("Key is at index " + index);
+        if (index == -1) {
+            System.out.println("Key is NOT found!");
+
+        } else {
+            System.out.println("Key is at index " + index);
+
+        }
     }
 }
