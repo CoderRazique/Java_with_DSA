@@ -1,4 +1,5 @@
 //  Linear search looking a key in a array
+//Find the index of element in a given array
 
 public class linearSearch {
     public static int LinearSearch(int key, int[] num) {

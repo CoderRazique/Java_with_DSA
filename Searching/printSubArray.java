@@ -4,12 +4,12 @@ public class printSubArray {
 
     public static void pairsIn_Array(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
+            for (int j = i; j < nums.length; j++) {
                 System.out.print("|");
                 for (int k = i; k <= j; k++) {
                     System.out.print(" " + nums[k] + " ");
                 }
-                System.out.print("| ");
+                System.out.println("|");
             }
             System.out.println();
         }
