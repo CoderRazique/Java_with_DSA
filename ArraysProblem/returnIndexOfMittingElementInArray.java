@@ -44,7 +44,7 @@ public class returnIndexOfMittingElementInArray {
 
     // binary search to find target in left to right boundary
     public static int search(int[] nums, int left, int right, int key) {
-        while (left < right) {
+        while (left <= right) {
             int mid = left + (right - left) / 2;
             if (nums[mid] == key) {
                 return mid;
@@ -76,7 +76,7 @@ public class returnIndexOfMittingElementInArray {
 
     public static void main(String[] args) {
         int nums[] = { 4, 5, 6, 7, 0, 1, 2 };
-        int key = 0;
+        int key = 3;
         int result = findSortedLeftAndRight(nums, key);
         System.out.println("index : " + result);
     }
