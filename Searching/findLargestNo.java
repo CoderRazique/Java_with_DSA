@@ -1,7 +1,5 @@
 // find the largest number in a given in a given array
 
-import java.util.*;
-
 public class findLargestNo {
     public static int getLargestNumber(int[] nums) {
         int max = Integer.MIN_VALUE;

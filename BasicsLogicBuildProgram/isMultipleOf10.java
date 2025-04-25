@@ -14,5 +14,6 @@ public class isMultipleOf10 {
             }
             System.out.println(n);
         } while (true);
+        sc.close();
     }
 }
