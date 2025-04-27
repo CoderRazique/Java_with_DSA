@@ -1,6 +1,7 @@
 //  String compression
 //  Input : "aaabbcccdd"
 // Output : "a3b2c3d2"
+// tc = O(n)
 
 public class stringCompression {
     public static String strCompress(String str) {
@@ -20,7 +21,7 @@ public class stringCompression {
     }
 
     public static void main(String[] args) {
-        String str = "aaabcccdd";
+        String str = "aaabbcccdd";
         System.out.println("Compress string : " + strCompress(str));
     }
 }
