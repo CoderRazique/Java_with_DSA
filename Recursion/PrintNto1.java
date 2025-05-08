@@ -1,4 +1,4 @@
-
+// print numbers from n to 1 (Decreasing Order)
 public class PrintNto1 {
     public static void printNTo1(int n) {
         if (n == 1) {
