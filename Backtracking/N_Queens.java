@@ -1,5 +1,6 @@
 // Olace N queens on an N*N chessboard such that no 2 queens can attack each other
 // N = 4
+// TC : O(n!)
 
 public class N_Queens {
     public static void nQueens(char[][] board, int row) {
