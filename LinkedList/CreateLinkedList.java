@@ -125,6 +125,47 @@ public class CreateLinkedList {
         return val;
     }
 
+    // Search (Iterative)
+    // Search for a key in a Linked List. Return the position where it is found.
+    // If not found, return -1.
+    public int searchKey(int key) {
+        if (head == null) {
+            System.out.println("LL is empty!");
+            return -1;
+        }
+        Node temp = head;
+        int i = 0;
+        while (temp != null) {
+            if (temp.data == key) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
+
+    // Search (Recursive)
+    // Search for a key in a Linked List. Return the position where it is found.
+    // If not found, return -1. Use Recursion.
+    public int helper(Node head, int key) {
+        if (head == null) {
+            return -1;
+        }
+        if (head.data == key) {
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if (idx == -1) {
+            return -1;
+        }
+        return idx + 1;
+    }
+
+    public int recSearchKey(int key) {
+        return helper(head, key);
+    }
+
     public static void main(String[] args) {
         CreateLinkedList ll = new CreateLinkedList();
         ll.addFirst(2);
@@ -137,6 +178,10 @@ public class CreateLinkedList {
         ll.printLinkedList();
         System.out.println("Remove element from last : " + ll.removelast());
         ll.printLinkedList();
+        System.out.println("Key is found index using iterative method : " + ll.searchKey(3));
+        System.out.println("Key is found index using iterative method : " + ll.searchKey(10));
+        System.out.println("Key is found index using recurtive method : " + ll.recSearchKey(3));
+        System.out.println("Key is found index using recurtive method : " + ll.recSearchKey(10));
         System.out.println("Size of linkedList : " + size);
     }
 }
