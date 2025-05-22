@@ -180,6 +180,22 @@ public class CreateLinkedList {
         head = prev;
     }
 
+    // reverse Linked List using recurtion
+    public Node tempReverse(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node newNode = tempReverse(head.next);
+        Node front = head.next;
+        front.next = head;
+        head.next = null;
+        return newNode;
+    }
+
+    public void resReverse() {
+        head = tempReverse(head);
+    }
+
     public static void main(String[] args) {
         CreateLinkedList ll = new CreateLinkedList();
         ll.addFirst(2);
@@ -188,7 +204,7 @@ public class CreateLinkedList {
         ll.addLast(4);
         ll.addMiddle(9, 2);
         ll.printLinkedList();
-        ll.reverse();
+        ll.resReverse();
         System.out.println("Reverse LL : ");
         ll.printLinkedList();
         System.out.println("Remove element from first : " + ll.removeFirst());
