@@ -166,6 +166,20 @@ public class CreateLinkedList {
         return helper(head, key);
     }
 
+    // reverse Linked List
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node front;
+        while (curr != null) {
+            front = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = front;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args) {
         CreateLinkedList ll = new CreateLinkedList();
         ll.addFirst(2);
@@ -173,6 +187,9 @@ public class CreateLinkedList {
         ll.addLast(3);
         ll.addLast(4);
         ll.addMiddle(9, 2);
+        ll.printLinkedList();
+        ll.reverse();
+        System.out.println("Reverse LL : ");
         ll.printLinkedList();
         System.out.println("Remove element from first : " + ll.removeFirst());
         ll.printLinkedList();
