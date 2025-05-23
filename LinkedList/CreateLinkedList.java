@@ -196,6 +196,31 @@ public class CreateLinkedList {
         head = tempReverse(head);
     }
 
+    // Find and Remove Nth Node from End
+    // Iterative Approach.
+    public void deleteNthFromEnd(int n) {
+        int sz = 0;
+        Node temp = head;
+        while (temp != null) {
+            sz++;
+            temp = temp.next;
+        }
+        if (n == sz) {
+            head = head.next;
+            return;
+        }
+
+        int i = 1;
+        int iToFind = sz - n;
+        Node prev = head;
+        while (i < iToFind) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
+
     public static void main(String[] args) {
         CreateLinkedList ll = new CreateLinkedList();
         ll.addFirst(2);
@@ -204,17 +229,23 @@ public class CreateLinkedList {
         ll.addLast(4);
         ll.addMiddle(9, 2);
         ll.printLinkedList();
-        ll.resReverse();
-        System.out.println("Reverse LL : ");
+        // ll.resReverse();
+        // System.out.println("Reverse LL : ");
         ll.printLinkedList();
-        System.out.println("Remove element from first : " + ll.removeFirst());
+        // System.out.println("Remove element from first : " + ll.removeFirst());
+        // ll.printLinkedList();
+        // System.out.println("Remove element from last : " + ll.removelast());
+        // ll.printLinkedList();
+        // System.out.println("Key is found index using iterative method : " +
+        // ll.searchKey(3));
+        // System.out.println("Key is found index using iterative method : " +
+        // ll.searchKey(10));
+        // System.out.println("Key is found index using recurtive method : " +
+        // ll.recSearchKey(3));
+        // System.out.println("Key is found index using recurtive method : " +
+        // ll.recSearchKey(10));
+        ll.deleteNthFromEnd(3);
         ll.printLinkedList();
-        System.out.println("Remove element from last : " + ll.removelast());
-        ll.printLinkedList();
-        System.out.println("Key is found index using iterative method : " + ll.searchKey(3));
-        System.out.println("Key is found index using iterative method : " + ll.searchKey(10));
-        System.out.println("Key is found index using recurtive method : " + ll.recSearchKey(3));
-        System.out.println("Key is found index using recurtive method : " + ll.recSearchKey(10));
         System.out.println("Size of linkedList : " + size);
     }
 }
