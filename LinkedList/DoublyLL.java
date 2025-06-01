@@ -44,31 +44,36 @@ public class DoublyLL {
     public int removeFirst() {
         if (head == null) {
             System.out.println("DLL is empty!");
-            return -1;
+            return Integer.MIN_VALUE;
         }
         if (head.next == null && tail.prev == null) {
             int data = head.data;
             head = tail = null;
+            size--;
             return data;
         }
         int data = head.data;
         head = head.next;
+        head.prev = null;
+        size--;
         return data;
     }
 
     public int removeLast() {
         if (head == null) {
             System.out.println("DLL is empty!");
-            return -1;
+            return Integer.MIN_VALUE;
         }
         if (head.next == null && tail.prev == null) {
             int data = head.data;
             head = tail = null;
+            size--;
             return data;
         }
         int data = tail.data;
         tail = tail.prev;
         tail.next = null;
+        size--;
         return data;
 
     }
@@ -98,5 +103,6 @@ public class DoublyLL {
         dll.printDLL();
         System.out.println(dll.removeLast() + " is successfully remove from last.");
         dll.printDLL();
+        System.out.println("Size of DLL : " + size);
     }
 }
