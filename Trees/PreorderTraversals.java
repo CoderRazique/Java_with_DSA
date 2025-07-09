@@ -28,7 +28,7 @@ public class PreorderTraversals {
             return newNode;
         }
 
-        void preorder(Node root) {
+        void preorder(Node root) { // O(n)
             if (root == null) {
                 // System.out.print("null ");
                 return;
@@ -37,6 +37,15 @@ public class PreorderTraversals {
             preorder(root.left);
             preorder(root.right);
         }
+
+        void inorder(Node root) {
+            if (root == null) {
+                return;
+            }
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
     }
 
     public static void main(String[] args) {
@@ -44,5 +53,7 @@ public class PreorderTraversals {
         BinaryTree bt = new BinaryTree();
         Node root = bt.buildTree(nodes);
         bt.preorder(root);
+        System.out.println();
+        bt.inorder(root);
     }
 }
