@@ -1,10 +1,10 @@
 // Diameter of a tree
+// Approach 1 : TC = O(n^2)
 //        1
 //      /   \
 //     2     3
 //    / \   / \
 //   4   5 6   7
-//TC = O(n^2)
 
 public class DiameterOfTree {
 
