@@ -1,4 +1,4 @@
-// Heigth of a tree
+// Diameter of a tree
 //        1
 //      /   \
 //     2     3
