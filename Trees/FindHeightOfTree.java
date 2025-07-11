@@ -1,4 +1,4 @@
-// Kth level of a tree
+// Heigth of a tree
 //        1
 //      /   \
 //     2     3
@@ -6,8 +6,7 @@
 //   4   5 6   7
 //TC = O(n)
 
-public class KthLevelOfATree {
-
+public class FindHeightOfTree {
     static class Node {
         int data;
         Node left;
@@ -20,16 +19,13 @@ public class KthLevelOfATree {
         }
     }
 
-    public static void kLevel(Node root, int level, int k) {
+    static int heightTree(Node root) {
         if (root == null) {
-            return;
+            return 0;
         }
-        if (level == k) {
-            System.out.print(root.data + " ");
-            return;
-        }
-        kLevel(root.left, level + 1, k);
-        kLevel(root.right, level + 1, k);
+        int lh = heightTree(root.left);
+        int rh = heightTree(root.right);
+        return Math.max(lh, rh) + 1;
     }
 
     public static void main(String[] args) {
@@ -40,6 +36,6 @@ public class KthLevelOfATree {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        kLevel(root, 1, 2);
+        System.out.println(heightTree(root));
     }
 }

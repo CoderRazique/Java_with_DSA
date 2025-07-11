@@ -1,4 +1,4 @@
-// Kth level of a tree
+// Lowest Common Ancestor
 //        1
 //      /   \
 //     2     3
@@ -6,7 +6,7 @@
 //   4   5 6   7
 //TC = O(n)
 
-public class KthLevelOfATree {
+public class LowestCommonAncestor2 {
 
     static class Node {
         int data;
@@ -20,16 +20,23 @@ public class KthLevelOfATree {
         }
     }
 
-    public static void kLevel(Node root, int level, int k) {
-        if (root == null) {
-            return;
+    public static Node lca(Node root, int n1, int n2) {
+        if (root == null || root.data == n1 || root.data == n2) {
+            return root;
         }
-        if (level == k) {
-            System.out.print(root.data + " ");
-            return;
+
+        Node leftLca = lca(root.left, n1, n2);
+        Node rightLca = lca(root.right, n1, n2);
+
+        if (rightLca == null) {
+            return leftLca;
         }
-        kLevel(root.left, level + 1, k);
-        kLevel(root.right, level + 1, k);
+
+        if (leftLca == null) {
+            return rightLca;
+        }
+
+        return root;
     }
 
     public static void main(String[] args) {
@@ -40,6 +47,7 @@ public class KthLevelOfATree {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        kLevel(root, 1, 2);
+        int n1 = 5, n2 = 6;
+        System.out.println(lca(root, n1, n2).data);
     }
 }
