@@ -4,6 +4,8 @@
 //     2     3
 //    / \   / \
 //   4   5 6   7
+// intput : node = 5, k = 2
+// output : 1
 //TC = O(n)
 
 public class KthAncestorOfNode {
