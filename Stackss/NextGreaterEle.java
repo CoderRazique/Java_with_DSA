@@ -21,6 +21,7 @@ public class NextGreaterEle {
                 nextGreater[i] = arr[s.peek()];
             }
             s.push(i);
+
         }
 
         for (int i = 0; i < nextGreater.length; i++) {

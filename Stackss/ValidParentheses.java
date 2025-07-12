@@ -2,6 +2,7 @@
 // sample input : s = "({[]}())"
 //  output  : true
 // input : "(]" , output : false
+// TC  = O(n)
 
 import java.util.Stack;
 

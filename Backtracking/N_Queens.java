@@ -1,4 +1,4 @@
-// Olace N queens on an N*N chessboard such that no 2 queens can attack each other
+// Place N queens on an N*N chessboard such that no 2 queens can attack each other
 // N = 4
 // TC : O(n!)
 

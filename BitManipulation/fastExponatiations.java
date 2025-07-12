@@ -1,4 +1,4 @@
-// Fast Exponatiations
+// Fast Exponentiations
 
 public class fastExponatiations {
     public static int fastExpo(int a, int n) {
